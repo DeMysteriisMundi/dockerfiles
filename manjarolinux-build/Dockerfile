@@ -14,7 +14,9 @@ RUN \
 	manjaro-tools-base-git \
 	manjaro-tools-iso-git  \
 	manjaro-tools-pkg-git  \
-	manjaro-tools-yaml-git
+	manjaro-tools-yaml-git \
+    # Download another tools
+        sudo
 
 COPY sudoers /etc/sudoers
 
