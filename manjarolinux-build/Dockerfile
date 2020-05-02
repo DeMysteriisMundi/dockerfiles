@@ -3,8 +3,11 @@ FROM manjarolinux/base:latest
 RUN \
     # Creates the user to iso building, so
     # adds him to the wheel group
-    useradd -d /home/isobuilder -m -s /bin/bash \
-        -U -G wheel isobuilder && \
+    useradd \
+        -d /home/isobuilder -m \
+        -s /bin/bash \
+        -U -G wheel \
+         isobuilder && \
     pacman -Sy && \
     pacman -S --noconfirm \
     # Update the keys
@@ -21,3 +24,4 @@ RUN \
 COPY sudoers /etc/sudoers
 
 USER isobuilder
+WORKDIR /home/isobuilder
